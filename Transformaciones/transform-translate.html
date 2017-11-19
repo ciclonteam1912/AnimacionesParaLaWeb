@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transformación de Rotación</title>
+	<style>
+		body{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			color: white;
+			font-family: Arial;
+			/*El punto de la perspectiva es cuan abierta o cuan cerrada va a estar nuestra perspectiva*/
+			/*La propiedad perspective se la tienes que dar/setear al padre del elemento el cual quieres trasladar (translate)`.
+			Utilizamos la propiedad perspective para poder darle profundidad a un elemento y obtener un efecto 3D.*/
+			perspective: 200px;
+			/*Con perspective-origin podemos definir el punto de origen de la perspectiva*/
+			perspective-origin: center; /*center es el valor por defecto*/
+			/*perspective-origin: top;*/
+			/*perspective-origin: bottom;*/
+			/*perspective-origin: left;*/
+			/*perspective-origin: right;*/
+			/*perspective-origin: top right;*/
+			/*perspective-origin: top left;*/
+			/*perspective-origin: bottom left;*/
+			/*perspective-origin: bottom right;*/
+		}
+
+		.container{
+			border: 1px solid red;
+		}
+
+		.container:hover .cuadrado{
+			/*Para mover a la derecha en el eje X*/
+			/*transform: translate(100px);*/
+			/*Para mover a la izquierda en el eje X*/
+			/*transform: translate(-100px);*/
+			/*Para mover a la derecha en el eje X y hacia abajo en el eje Y*/
+			/*transform: translate(100px, 100px);*/
+			/*Para mover a la izquierda en el eje X y hacia arriba en el eje Y*/
+			/*transform: translate(-100px, -100px);*/
+			/*Para mover a la derecha en el eje X*/
+			/*transform: translateX(100px);*/
+			/*Para mover hacia abjo en el eje Y*/
+			/*transform: translateY(100px);*/
+			/*transform: translateZ(100px); En este caso no pasa nada porque estoy en un canvas 2D. Para eso están las perspectivas*/
+			/*La perspectiva es ponerle un contexto 3D a nuestro elemento, y decirle cuál es la referencia del punto de donde me encuentro
+			y donde están los elementos que deso animar*/
+			/*transform: translate3d(100px, 100px, 100px);*/
+			transform: translate3d(-100px, -100px, -100px);
+		}
+
+		.cuadrado{
+			width: 200px;
+			height: 200px;
+			background: #7dc900;
+			margin: 20px;
+			transition: .3s;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="cuadrado">
+			Hola Mundo!
+		</div>
+	</div>
+</body>
+</html>
