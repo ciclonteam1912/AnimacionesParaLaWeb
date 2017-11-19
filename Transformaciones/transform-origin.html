@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transformación de Punto de Origen</title>
+	<style>
+		body{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			color: white;
+			font-family: Arial;
+		}
+
+		.container{
+			border: 1px solid red;
+		}
+
+		.container:hover .cuadrado{
+			/*El punto de transformación de un elemento está clavado en alguna parte de la interfaz, y por defecto se encuentra en el centro.
+			Sin embargo, podemos jugar con la posición de este punto según el tipo de animación que queramos crear.*/
+			transform: rotateZ(45deg); /*Rotación en el eje X*/
+			transform-origin: left top;
+
+		}
+
+		.cuadrado{
+			width: 200px;
+			height: 200px;
+			background: #7dc900;
+			margin: 20px;
+			transition: .3s;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="cuadrado">
+			Hola Mundo!
+		</div>
+	</div>
+</body>
+</html>
